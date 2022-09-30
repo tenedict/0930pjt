@@ -3,8 +3,8 @@
 
 <form action="{% url 'movies:create' %} ">
 
-    <div class="container">
-        <div class="input-group mb-3">
+    <div class="container my-5">
+        <!-- <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">제목</span>
             <input type="text" class="form-control" name="title" aria-label="Sizing example input" maxlength="80"
                 aria-describedby="inputGroup-sizing-default" placeholder='제목을 입력해 주세요'>
@@ -13,8 +13,20 @@
             <span class="input-group-text" id="inputGroup-sizing-default">내용</span>
             <textarea type="text" class="form-control" name="content" aria-label="Sizing example input" maxlength="800"
                 aria-describedby="inputGroup-sizing-default" placeholder='내용을 입력해 주세요' aria-label="With textarea"></textarea>
+        </div> -->
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label text-white">제목</label>
+            <input type="text" class="form-control" name="title" id="exampleFormControlInput1"
+                placeholder='제목을 입력해 주세요'>
         </div>
-        <input type="submit" class="btn btn-primary w-100" value="리뷰쓰기">
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label text-white">내용</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"
+                placeholder='내용을 입력해 주세요'></textarea>
+        </div>
+
+
+        <input type="submit" class="btn btn-outline-light fw-bolder w-100" value="리뷰쓰기">
     </div>
 </form>
 

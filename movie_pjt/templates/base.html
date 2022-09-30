@@ -19,10 +19,17 @@
 
 </head>
 
-<body>
+<body class="bg-dark">
     <header></header>
-    {% block content %}
-    {% endblock %}
+    <div class="text-white">
+    <nav class="navbar navbar-dark bg-black">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">J&J Movie Company</a>
+        </div>
+    </nav>
+    </div>
+        {% block content %}
+        {% endblock %}
 </body>
 
 </html>

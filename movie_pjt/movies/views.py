@@ -23,6 +23,7 @@ def create(request):
     content = request.GET.get("content")
     title = request.GET.get("title")
     created_at = request.GET.get("created_at")
+    print(title, content)
     Movie.objects.create(
         content=content,
         title=title,
