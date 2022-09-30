@@ -5,13 +5,9 @@ from .models import Movie
 cnt = 0
 
 def index(request):
-    star_lst = []
     movies = Movie.objects.all()
-    for movie in movies:
-        star_lst.append(movie.star*'⭐')
     context = {
         "movies": movies,
-        "star_lst": star_lst,
     }
     return render(request, "movies/index.html", context)
 

@@ -7,4 +7,4 @@ class Movie(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     cnt = models.IntegerField(default=0)
-    star = models.IntegerField(default=5)
+    star = models.CharField(max_length=20,default='⭐⭐⭐')
