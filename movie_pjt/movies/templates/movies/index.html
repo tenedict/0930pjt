@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+    </thead>
+    {% for movie in movies %}
+    <tr>
+        <th scope="row">{{ movie.pk }}</th>
+        <td>{{ movie.title }}</td>
+        <td>{{ movie.created_at }}</td>
+    </tr>
+    {% endfor %}
+
+
+    {% endblock %}
