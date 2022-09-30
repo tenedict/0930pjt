@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="{% url 'movies:update' movie.pk %} ">
+<form action="{% url 'movies:update' movie.pk %}" id="myform" class="container my-5">
 
-    <div class="container">
-        <div class="input-group mb-3">
-            <div class="input-group-text" id="inputGroup-sizing-default">제목</div>
-            <input type="text" class="form-control" name="title" aria-label="Sizing example input" maxlength="80"
-                aria-describedby="inputGroup-sizing-default" value="{{ movie.title }}">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label text-white">제목</label>
+            <input type="text" class="form-control" name="title" id="exampleFormControlInput1"
+                value="{{ movie.title }}">
         </div>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">내용</span>
-            <input type="text" class="form-control" name="content" aria-label="Sizing example input" maxlength="800"
-                aria-describedby="inputGroup-sizing-default" value="{{ movie.content }}">
+        <fieldset class="my-4">
+            <input type="radio" name="star" value="5" id="rate1"><label for="rate1">⭐</label>
+            <input type="radio" name="star" value="4" id="rate2"><label for="rate2">⭐</label>
+            <input type="radio" name="star" value="3" id="rate3"><label for="rate3">⭐</label>
+            <input type="radio" name="star" value="2" id="rate4"><label for="rate4">⭐</label>
+            <input type="radio" name="star" value="1" id="rate5"><label for="rate5">⭐</label>
+        </fieldset>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label text-white">내용</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"
+            value="{{ movie.content }}"></textarea>
         </div>
-        <input type="submit" class="btn btn-primary w-100" value="리뷰수정">
-    </div>
+        <input type="submit" class="btn btn-outline-light fw-bolder w-100" value="리뷰수정">
+
+    
 </form>
 
 

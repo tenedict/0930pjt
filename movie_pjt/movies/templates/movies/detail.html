@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-    <h1 clas>제목 : {{ movie.title }}</h1>
-    <p >{{ movie.content }}</p>
-    <a href="{% url 'movies:edit' movie.pk %}">리뷰 수정</a>
-    <a href="{% url 'movies:delete' movie.pk %}">리뷰 삭제</a>
-    <a href="{% url 'movies:index' %}">돌아가기</a>
+<div class="container my-5">
+    <h1 class="text-white">{{ movie.title }}</h1>
+    <hr style="background-color:white; border:0; height: 5px;">
+    <p class="text-white">{{ movie.content }}</p>
+
+
+    <a href="{% url 'movies:edit' movie.pk %}" type="button" class="btn btn-outline-light fw-bolder mx-1 my-5 by-5">리뷰 수정</a>
+    <a href="{% url 'movies:delete' movie.pk %}" type="button" class="btn btn-outline-light fw-bolder mx-1 my-5 by-5">리뷰 삭제</a>
+    <a href="{% url 'movies:index' %}" type="button" class="btn btn-outline-light fw-bolder mx-1 my-5 by-5">돌아가기</a>
+    <p> 조회수 : {{ movie.cnt }}</p>
 </div>
+
 {% endblock %}

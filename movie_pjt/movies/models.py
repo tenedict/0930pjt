@@ -6,3 +6,5 @@ class Movie(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    cnt = models.IntegerField(default=0)
+    star = models.IntegerField(default=5)

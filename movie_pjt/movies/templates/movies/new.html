@@ -1,9 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="{% url 'movies:create' %} ">
+<form action="{% url 'movies:create' %} " id="myform" class="container my-5">
 
-    <div class="container my-5">
         <!-- <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">제목</span>
             <input type="text" class="form-control" name="title" aria-label="Sizing example input" maxlength="80"
@@ -19,15 +18,21 @@
             <input type="text" class="form-control" name="title" id="exampleFormControlInput1"
                 placeholder='제목을 입력해 주세요'>
         </div>
+        <fieldset class="my-4">
+            <input type="radio" name="star" value="5" id="rate1"><label for="rate1">⭐</label>
+            <input type="radio" name="star" value="4" id="rate2"><label for="rate2">⭐</label>
+            <input type="radio" name="star" value="3" id="rate3"><label for="rate3">⭐</label>
+            <input type="radio" name="star" value="2" id="rate4"><label for="rate4">⭐</label>
+            <input type="radio" name="star" value="1" id="rate5"><label for="rate5">⭐</label>
+        </fieldset>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label text-white">내용</label>
             <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"
                 placeholder='내용을 입력해 주세요'></textarea>
         </div>
 
-
         <input type="submit" class="btn btn-outline-light fw-bolder w-100" value="리뷰쓰기">
-    </div>
+
 </form>
 
 

@@ -2,13 +2,16 @@ from django.shortcuts import render, redirect
 from .models import Movie
 
 # Create your views here.
-
+cnt = 0
 
 def index(request):
+    star_lst = []
     movies = Movie.objects.all()
-
+    for movie in movies:
+        star_lst.append(movie.star*'⭐')
     context = {
         "movies": movies,
+        "star_lst": star_lst,
     }
     return render(request, "movies/index.html", context)
 
@@ -23,19 +26,28 @@ def create(request):
     content = request.GET.get("content")
     title = request.GET.get("title")
     created_at = request.GET.get("created_at")
-    print(title, content)
+    star = request.GET.get('star')
+    
     Movie.objects.create(
         content=content,
         title=title,
         created_at = created_at,
+        star = star,
     )
 
     return redirect("movies:index")
 
 def detail(request, pk):
+
     movie = Movie.objects.get(pk=pk)
-    
-    return render(request, 'movies/detail.html', {'movie':movie})
+    count = movie.cnt
+    count += 1
+    movie.cnt=count
+    movie.save()
+    context = {
+        'movie':movie,
+    }
+    return render(request, 'movies/detail.html', context)
 
 def edit(request, pk):
     movie = Movie.objects.get(pk=pk)
@@ -48,10 +60,12 @@ def update(request, pk):
     content = request.GET.get("content")
     title = request.GET.get("title")
     updated_at = request.GET.get("updated_at")
+    star = request.GET.get('star')
 
     movie.content = content
     movie.title = title
     movie.updated_at = updated_at
+    movie.star = star
     movie.save()
 
     return redirect('movies:index')
