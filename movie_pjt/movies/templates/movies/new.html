@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<form action="{% url 'movies:new' %} ">
+<form action="{% url 'movies:create' %} ">
 
     <div class="container">
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">제목</span>
             <input type="text" class="form-control" name="title" aria-label="Sizing example input" maxlength="80"
-                aria-describedby="inputGroup-sizing-default">
+                aria-describedby="inputGroup-sizing-default" placeholder='제목을 입력해 주세요'>
         </div>
         <div class="input-group mb-3">
             <span class="input-group-text" id="inputGroup-sizing-default">내용</span>
-            <input type="text" class="form-control" name="content" aria-label="Sizing example input" maxlength="800"
-                aria-describedby="inputGroup-sizing-default">
+            <textarea type="text" class="form-control" name="content" aria-label="Sizing example input" maxlength="800"
+                aria-describedby="inputGroup-sizing-default" placeholder='내용을 입력해 주세요' aria-label="With textarea"></textarea>
         </div>
+        <input type="submit" class="btn btn-primary w-100" value="리뷰쓰기">
     </div>
-    <input type="submit" class="w-100 " value="리뷰쓰기">
 </form>
 
 

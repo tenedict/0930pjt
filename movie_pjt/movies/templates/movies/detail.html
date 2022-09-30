@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>제목 : {{ movie.title }}</h1>
+<p>{{ movie.content }}</p>
+<a href="{% url 'movies:edit' movie.pk %}">리뷰 수정</a>
+<a href="{% url 'movies:delete' movie.pk %}">리뷰 삭제</a>
+{% endblock %}

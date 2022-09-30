@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form action="{% url 'movies:update' movie.pk %} ">
+
+    <div class="container">
+        <div class="input-group mb-3">
+            <div class="input-group-text" id="inputGroup-sizing-default">제목</div>
+            <input type="text" class="form-control" name="title" aria-label="Sizing example input" maxlength="80"
+                aria-describedby="inputGroup-sizing-default" value="{{ movie.title }}">
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="inputGroup-sizing-default">내용</span>
+            <input type="text" class="form-control" name="content" aria-label="Sizing example input" maxlength="800"
+                aria-describedby="inputGroup-sizing-default" value="{{ movie.content }}">
+        </div>
+        <input type="submit" class="btn btn-primary w-100" value="리뷰수정">
+    </div>
+</form>
+
+
+
+{% endblock %}
